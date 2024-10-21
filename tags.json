@@ -1,0 +1,92 @@
+{
+    "angular": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["angular", "angularjs", "rxjs"]
+    },
+    "nodejs": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["nodejs", "express", "nestjs", "fastify"]
+    },
+    "reactjs": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["reactjs", "react", "nextjs", "remix", "vite", "vitest"]
+    },
+    "react-native": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["react-native", "expo", "react native"]
+    },
+    "flutter": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["flutter", "flutterflow", "dart"]
+    },
+    "vuejs": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["vuejs", "vue", "nuxt"]
+    },
+    "symfony": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["symfony", "twig"]
+    },
+    "laravel": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["laravel"]
+    },
+    "django": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["django"]
+    },
+    "flask": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["flask"]
+    },
+    "ruby": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["ruby", "ruby on rails"]
+    },
+    "wordpress": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["wordpress", "woocommerce"]
+    },
+    "prestashop": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["prestashop"]
+    }, 
+    "swift": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["swift"]
+    },
+    "kotlin": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["kotlin"]
+    },
+    "java": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["java"]
+    },
+    "rust": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["rust"]
+    },
+    "go": {
+        "role_id": "126262626262626262",
+        "channel_id": "126262626262626262",
+        "sub_tags": ["go"]
+    }
+}
