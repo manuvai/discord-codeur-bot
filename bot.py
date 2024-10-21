@@ -5,6 +5,7 @@ import json
 import feedparser
 import re
 from datetime import datetime
+from discord.ext import commands
 
 RSS_FEED_URL = "https://www.codeur.com/projects?format=rss"
 PUBLISHED_PROJECTS_FILE = "published_projects.json"
@@ -13,7 +14,8 @@ TAGS_FILE = "tags.json"
 intents = discord.Intents.default()
 intents.messages = True
 client = discord.Client(intents=intents)
-
+intents.members = True  # Assurez-vous que l'intention des membres est activée
+client = commands.Bot(command_prefix='/', intents=intents)
 
 def load_published_projects():
     if os.path.exists(PUBLISHED_PROJECTS_FILE):
@@ -159,6 +161,26 @@ async def send_rss_update(title, link, description, pub_date_dt):
             await channel.send(' '.join(role_mentions), embed=embed)
         else:
             await channel.send(embed=embed)
+
+
+@client.command(name='mp-all')
+@commands.has_permissions(administrator=True)
+async def mp_all(ctx, *, message: str):
+    """Envoie un message privé à chaque membre de la guilde."""
+    guild = ctx.guild
+    if guild is None:
+        await ctx.send("Cette commande doit être utilisée dans une guilde.")
+        return
+
+    for member in guild.members:
+        if not member.bot:  # Évitez d'envoyer des messages aux bots
+            try:
+                await member.send(message)
+                print(f"Message envoyé à {member.name}")
+            except discord.Forbidden:
+                print(f"Impossible d'envoyer un message à {member.name}")
+
+    await ctx.send("Messages envoyés à tous les membres.")
 
 
 client.run(os.getenv("TOKEN", ""))
