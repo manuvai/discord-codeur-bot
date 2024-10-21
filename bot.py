@@ -8,6 +8,7 @@ from datetime import datetime
 
 RSS_FEED_URL = "https://www.codeur.com/projects?format=rss"
 PUBLISHED_PROJECTS_FILE = "published_projects.json"
+TAGS_FILE = "tags.json"
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -86,16 +87,20 @@ async def send_rss_update(title, link, description, pub_date_dt):
         return
 
     technologies = [
-        "angular", "nodejs", "nestjs", "reactjs", "react-native", "flutter",
-        "vuejs", "nextjs", "symfony", "laravel", "django", "flask",
-        "ruby on rails", "ruby", "php", "python", "java", "kotlin", "swift",
-        "objective-c", "c#", "c++", ".net", "rust"
+       
     ]
 
+    for tag in TAGS:
+        technologies.extend(TAGS[tag]["sub_tags"])
+
     for tech in technologies:
-        if tech in title.lower() or tech in clean_desc.lower():
-            TECH_ROLE_ID = f"{tech.upper()}_ROLE_ID"
-            role_id = os.getenv(TECH_ROLE_ID)
+       
+        pattern = r'\b' + re.escape(tech) + r'\b'
+        if re.search(pattern, title.lower()) or re.search(pattern, clean_desc.lower()):
+            
+            tech_name = next((tag for tag in TAGS if tech in TAGS[tag]["sub_tags"]), None)
+          
+            role_id = TAGS[tech_name]["role_id"]
 
             if role_id:
                 role = guild.get_role(int(role_id))
@@ -106,19 +111,14 @@ async def send_rss_update(title, link, description, pub_date_dt):
             if channel_id:
                 try:
                     channel = client.get_channel(int(channel_id))
-                    if isinstance(
-                            channel,
-                            TextChannel):  # Vérifiez si c'est un TextChannel
+                    if isinstance(channel, TextChannel):  # Vérifiez si c'est un TextChannel
                         channels.append(channel)
                     else:
-                        print(
-                            f"{tech.upper()}_CHANNEL_ID is not a TextChannel.")
+                        print(f"{tech.upper()}_CHANNEL_ID is not a TextChannel.")
                 except ValueError:
                     print(f"Invalid channel ID for {tech.upper()}")
             else:
-                print(
-                    f"{tech.upper()}_CHANNEL_ID environment variable is not set."
-                )
+                print(f"{tech.upper()}_CHANNEL_ID environment variable is not set.")
 
     budget = None
     categories = None
