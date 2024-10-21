@@ -5,8 +5,8 @@
         "sub_tags": ["angular", "angularjs", "rxjs", "ngrx"]
     },
     "nodejs": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["nodejs", "express", "nestjs", "fastify"]
     },
     "reactjs": {
@@ -27,7 +27,7 @@
     "vuejs": {
         "role_id": "1278997326526152704",
         "channel_id": "1280181425739661392",
-        "sub_tags": ["vuejs", "vue", "nuxt"]
+        "sub_tags": ["vuejs", "vue", "nuxt", "vuetify", "pinia"]
     },
     "symfony": {
         "role_id": "1278996799578968139",
@@ -57,36 +57,36 @@
     "wordpress": {
         "role_id": "1280160708696211583",
         "channel_id": "1280181210282201176",
-        "sub_tags": ["wordpress", "woocommerce", "elementor", "yoast"]
+        "sub_tags": ["wordpress", "woocommerce", "elementor", "yoast", "salient", "generatepress", "wpspectra", "dokan" ]
     },
     "prestashop": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["prestashop"]
     }, 
     "swift": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["swift"]
     },
     "kotlin": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["kotlin", "ktor"]
     },
     "java": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["java"]
     },
     "rust": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["rust"]
     },
     "go": {
-        "role_id": "126262626262626262",
-        "channel_id": "126262626262626262",
+        "role_id": "",
+        "channel_id": "",
         "sub_tags": ["go", "golang"]
     }
 }
